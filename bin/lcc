@@ -1,0 +1,11 @@
+#! /usr/bin/bash
+
+case "$1" in
+  status)
+    "$(dirname "$0")/../lib/status"
+    ;;
+  *)
+    echo "Usage: lcc status"
+    exit 1
+    ;;
+esac

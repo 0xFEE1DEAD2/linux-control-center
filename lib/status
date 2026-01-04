@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+
+# Filesystem array of filesystems to exclude
+filesystems=(tmpfs devtmpfs efivarfs none)
+
+# Loop through array
+for i in "${filesystems[@]}"; do
+  args+=(-x "$i")
+done
+
+# Disk information
+df -h "${args[@]}"
+
+
